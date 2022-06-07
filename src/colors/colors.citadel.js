@@ -1,5 +1,4 @@
-// the output from convertToStrings.firefox.js
-const textContent = [
+const citadel = [
   "Ceramite White - Citadel - Base Layer - #ffffff",
   "Dead White - Vallejo (Game) - #ffffff - 0.00",
   "White - Vallejo (Model) - #ffffff - 0.00",
@@ -522,45 +521,4 @@ const textContent = [
   "Centaur Skin - Army Painter - #deaba0 - 6.88"
 ]
 
-// Process array items in batches of 5
-let batches = []
-var N = 5;
-for (var i = 0; i < textContent.length; i += N) {
-  batches.push(
-    [
-      textContent[i], 
-      textContent[i + N - 1],
-      textContent[i + N - 2],
-      textContent[i + N - 3],
-      textContent[i + N - 4]
-  ])
-}
-
-let colors = []
-
-for (let j = 0; j < batches.length; j++) {
-
-  for (let k = 0; k < batches[j].length; k++) {
-    const e = batches[j][k].split(' - ') //?
-      
-    let o = {
-      name: e[0],
-      brand: e[1],
-    }
-
-    if (o.brand === 'Citadel') {
-      o.type = e[2]
-      o.hex = e[3]
-    } else {
-      o.hex = e[2]
-      o.delta = e[3]
-    }
-    colors.push(o)
-  }
-}
-
-export default {
-  colors
-}
-
-// colors //?
+export default citadel

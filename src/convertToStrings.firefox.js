@@ -16,7 +16,8 @@ textContent = [];
   	)
 })
 
-console.table(textContent)
+// console.table(textContent)
 
+textContent
 
                         
