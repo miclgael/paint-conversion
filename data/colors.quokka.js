@@ -1,9 +1,9 @@
 // the output from convertToStrings.firefox.js
 import citadel from './colors/colors.citadel'
-// import p3 from './colors/colors.p3'
-// import * as armypainter from './colors/colors.ap'
-// import vm from './colors/colors.vm'
-// import vg from './colors/colors.vg'
+import p3 from './colors/colors.p3'
+import * as armypainter from './colors/colors.ap'
+import vm from './colors/colors.vm'
+import vg from './colors/colors.vg'
 
 // Process array items in batches of 5
 const createBatches = (colorGroup) => {
@@ -26,10 +26,11 @@ const createColorTable = (batch) => {
   let colors = []
 
   for (let j = 0; j < batches.length; j++) {
+
     for (let k = 0; k < batches[j].length; k++) {
-      const e = batches[j][k].split(' - ') //?
+      const e = batches[j][k].split(' - ')
         
-      let o = {
+      var o = {
         name: e[0],
         brand: e[1],
       }
@@ -41,8 +42,10 @@ const createColorTable = (batch) => {
         o.hex = e[2]
         o.delta = e[3]
       }
+
       colors.push(o)
     }
+
   }
   return colors
 }
