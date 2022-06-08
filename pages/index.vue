@@ -10,7 +10,7 @@ const colors = await $fetch('/api/citadel')
       </select>
     </div>
     <div class="grid">
-      <div class="card" v-for="(color, index) in colors.table" :key="`${color}--index`">
+      <div class="card" v-for="(color, index) in colors.table" :key="`color--${index}`">
         <div class="card-swatch" :style="{'background-color': color.hex }"></div>
         <div class="card-meta">
           <strong>Brand:</strong> {{ color.brand }}<br>
@@ -57,6 +57,11 @@ const colors = await $fetch('/api/citadel')
     grid-template-rows: repeat(2, 1fr);
   }
 }
+
+.card:nth-child(5n) {
+  color: red;
+}
+
 .card-swatch {}
 .card-meta {
   padding: 1rem;
